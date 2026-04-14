@@ -7,12 +7,13 @@ def g:Open_file_tree()
 	for i in range(1, winnr('$'))
 		add(buftypes, getwinvar(i, '&filetype'))
 	endfor
-	var tree_is_open = index(buftypes, 'netrw')
-	if tree_is_open != -1
+
+	if index(buftypes, 'netrw') != -1
 		echo "You already have a Explorer instance opened!!!"
 		return
 	endif
-	execute ":25vs %"
+
+	execute ":25vsplit"
 	execute "Ex"
 enddef
 
