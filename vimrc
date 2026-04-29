@@ -1,5 +1,7 @@
 vim9script
 g:mapleader = ' '
+set nomodeline
+set modelines=0
 
 
 def g:Open_file_tree()
